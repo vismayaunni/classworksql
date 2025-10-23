@@ -1,16 +1,12 @@
-SELECT b.book_id, b.title, br.name
-FROM books b
-LEFT JOIN borrowers br ON b.book_id = br.book_id;
 
-SELECT br.borrower_id, br.name, b.book_id, b.title
-FROM borrowers br
-LEFT JOIN books b ON br.book_id = b.book_id;
+SELECT e.id, e.name, d.department_name
+FROM employees e
+LEFT JOIN departments d ON e.id = d.emp_id;
 
-SELECT b.book_id, b.title
-FROM books b
-LEFT JOIN borrowers br ON b.book_id = br.book_id
-WHERE br.book_id IS NULL;
+SELECT e.id, e.name, d.department_name
+FROM employees e
+INNER JOIN departments d ON e.id = d.emp_id;
 
-SELECT br.borrower_id, br.name, b.book_id, b.title
-FROM borrowers br
-LEFT JOIN books b ON br.book_id = b.book_id;
+SELECT d.emp_id, d.department_name
+FROM departments d
+LEFT JOIN employees e ON d.emp_id = e.id;
